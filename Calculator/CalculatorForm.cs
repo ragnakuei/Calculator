@@ -15,7 +15,7 @@ namespace Calculator
         {
             var number = (sender as Button).Text;
 
-            if(_clickEqual)
+            if (_clickEqual)
             {
                 lblPrevious.Text = string.Empty;
                 tbxResult.Text = number;
@@ -23,7 +23,7 @@ namespace Calculator
                 return;
             }
 
-            if(IsNumber(tbxResult.Text))
+            if (IsNumber(tbxResult.Text))
             {   // 是數字
                 tbxResult.Text += number;
             }
@@ -32,7 +32,7 @@ namespace Calculator
                 lblPrevious.Text += tbxResult.Text;
                 tbxResult.Text = number;
             }
-            return;            
+            return;
         }
 
         private void btnDot_Click(object sender, EventArgs e)
@@ -55,6 +55,7 @@ namespace Calculator
 
         private void btnEqual_Click(object sender, EventArgs e)
         {
+            if (_clickEqual) return;
             if (this._calculator.Operator == string.Empty) return;
             if (tbxResult.Text == string.Empty) return;
 
@@ -70,7 +71,7 @@ namespace Calculator
             if (tbxResult.Text == string.Empty) return;
             if (IsNumber(tbxResult.Text) == false) return;
 
-                if (_clickEqual)
+            if (_clickEqual)
             {
                 lblPrevious.Text = tbxResult.Text;
                 _clickEqual = false;
@@ -94,7 +95,7 @@ namespace Calculator
         {
             decimal tmp;
             if (decimal.TryParse(tbxResult.Text, out tmp))
-            {   
+            {
                 return true;
             }
             return false;

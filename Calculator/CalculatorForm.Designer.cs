@@ -299,7 +299,7 @@
             // 
             // lblPrevious
             // 
-            this.lblPrevious.ForeColor = System.Drawing.Color.Silver;
+            this.lblPrevious.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblPrevious.Location = new System.Drawing.Point(14, 9);
             this.lblPrevious.Name = "lblPrevious";
             this.lblPrevious.Size = new System.Drawing.Size(295, 22);
